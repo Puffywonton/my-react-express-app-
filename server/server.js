@@ -38,12 +38,12 @@ io.on('connection', (socket) => {
   console.log(`User ${socket.id} connected`);
 
   // upon connection - only to user
-  socket.emit('message',
-    {
-      type: "admin",
-      body: `Welcome, your username is ${socket.id.substring(0, 5)}`
-    }
-  )
+  // socket.emit('message',
+  //   {
+  //     type: "admin",
+  //     body: `Welcome, your username is ${socket.id.substring(0, 5)}`
+  //   }
+  // )
 
   socket.emit('usernameAtrib', `${socket.id.substring(0, 5)}`)
 

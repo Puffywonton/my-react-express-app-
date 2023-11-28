@@ -22,12 +22,29 @@
   color: green;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 li{
   display: flex;
   flex-direction: row;
+  align-items: start;
   gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 p{
   margin: 0;
+}
+
+.chatContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
 }

@@ -34,7 +34,8 @@ const ChatApp = () => {
   };
   }, []);
 
-  const sendMessage = () => {
+  const sendMessage = (e) => {
+    e.preventDefault()
     if (messageInput.trim() !== '') {
       socket.emit('message', messageInput);
       setMessageInput('');
@@ -49,8 +50,8 @@ const ChatApp = () => {
 
   return (
     <>
-      <div>
-        <p>you are connected as {username}</p>
+      <div className="chatContainer">
+        <div className="connectedAs">you are connected as <span className="myself">{username}</span></div>
         <ul>
           {messages.map((msg, index) => (
             <li className={msg.type == "admin" ? "adminMsg" : "userMsg"} key={index}>
@@ -59,12 +60,14 @@ const ChatApp = () => {
             </li>
           ))}
         </ul>
-        <input
-          type="text"
-          value={messageInput}
-          onChange={onChangeHandler}
-        />
-        <button onClick={sendMessage}>Send</button>
+        <form onSubmit={sendMessage}>
+          <input
+            type="text"
+            value={messageInput}
+            onChange={onChangeHandler}
+          />       
+          <button>Send</button>
+        </form>
         <p>{activity}</p>
       </div>
     </>
