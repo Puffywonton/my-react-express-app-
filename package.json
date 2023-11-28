@@ -1,0 +1,11 @@
+{
+  "name": "my-react-express-app-",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "postinstall": "cd client && npm run build && cd ../server && npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
